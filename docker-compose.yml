@@ -20,3 +20,20 @@ services:
             - ./logs/php-fpm:/var/log/php-fpm
             - ./public:/var/www/public:ro
             - ./src:/var/www/src:ro
+            - ./.env:/var/www/.env:ro
+    mariadb:
+        image: mariadb:latest
+        restart: always
+        container_name: ${MYSQL_HOST}
+        env_file:
+            - ".env"
+        environment:
+            - MYSQL_DATABASE=${MYSQL_DATABASE}
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+            - MYSQL_USER=${MYSQL_USER}
+            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./data/mariadb/mysql:/var/lib/mysql
+            - ./data/mariadb/initial-data:/docker-entrypoint-initdb.d:ro

@@ -1,3 +1,6 @@
+.env*
+!.env.example
+
 ### OSX ###
 *.DS_Store
 .AppleDouble
@@ -24,3 +27,19 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+### Vim ###
+# swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags
+# plugins
+.phpcomplete_extended
