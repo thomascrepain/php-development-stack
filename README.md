@@ -21,7 +21,7 @@ cd php-development-stack
 cp .env.example .env
 ```
 
-### 4. Start Docker
+### 3. Start Docker
 
 In the project root folder run:
 ```
@@ -58,6 +58,7 @@ The application is available at http://localhost
 ### PHP-FPM (7-fpm-alpine)
 
 Installed:
+```
 * libmcrypt
 * lybmcrypt-dev
 * mysql-client
@@ -72,6 +73,7 @@ Installed:
 * intl
 * opcache
 * mbstring
+```
 
 * [PHP](http://php.net/)
 * [PHP on Docker Hub](https://hub.docker.com/_/php/)
