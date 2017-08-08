@@ -37,3 +37,11 @@ services:
         volumes:
             - ./data/mariadb/mysql:/var/lib/mysql
             - ./data/mariadb/initial-data:/docker-entrypoint-initdb.d:ro
+
+    mailcatcher:
+        image: sj26/mailcatcher:latest
+        restart: always
+        container_name: ${SMTP_HOST}
+        ports:
+            - "1025:1025"
+            - "1080:1080"
