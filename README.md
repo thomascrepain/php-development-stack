@@ -82,6 +82,8 @@ Installed:
 
 The MariaDB server is for the host machine available at localhost:3306. This should be turned of in production or blocked by firewall.
 
+When the container runs for the first time it will look in the `services/mariadb/initial-data` directory for any `.sh`, `.sql` and `.sql.gz` files. These files will be executed in alphabetical order.
+
 * [MariaDB](https://mariadb.org/)
 * [MariaDB on Docker Hub](https://hub.docker.com/_/mariadb/)
 

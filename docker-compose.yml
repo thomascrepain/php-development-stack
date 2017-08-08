@@ -36,7 +36,7 @@ services:
             - "3306:3306"
         volumes:
             - ./data/mariadb/mysql:/var/lib/mysql
-            - ./data/mariadb/initial-data:/docker-entrypoint-initdb.d:ro
+            - ./services/mariadb/initial-data:/docker-entrypoint-initdb.d:ro
 
     mailcatcher:
         image: sj26/mailcatcher:latest
