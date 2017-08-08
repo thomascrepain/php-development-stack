@@ -48,7 +48,7 @@ The app will be running at http://localhost
 
 This repo only uses official Docker images from Docker Hub. Any modifications to these images are available in `services/<image-name>/Dockerfile`.
 
-### Nginx (latest)
+### Nginx (stable-alpine)
 
 The application is available at http://localhost
 
