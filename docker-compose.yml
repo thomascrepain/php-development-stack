@@ -21,6 +21,7 @@ services:
             - ./public:/var/www/public:ro
             - ./src:/var/www/src:ro
             - ./.env:/var/www/.env:ro
+
     mariadb:
         image: mariadb:latest
         restart: always
@@ -36,6 +37,8 @@ services:
             - "3306:3306"
         volumes:
             - ./data/mariadb/mysql:/var/lib/mysql
+            - ./logs/mariadb:/var/log/mysql
+            - ./services/mariadb/config:/etc/mysql/conf.d:ro
             - ./services/mariadb/initial-data:/docker-entrypoint-initdb.d:ro
 
     mailcatcher:
