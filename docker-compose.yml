@@ -15,10 +15,10 @@ services:
         build: ./services/php-fpm
         restart: always
         volumes:
-            - ./services/php-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf:ro
-            - ./services/php-fpm/php.ini:/usr/local/etc/php/php.ini:ro
             - ./logs/php-fpm:/var/log/php-fpm
             - ./public:/var/www/public:ro
+            - ./services/php-fpm/config/php-fpm.conf:/usr/local/etc/php-fpm.conf:ro
+            - ./services/php-fpm/config/php.ini:/usr/local/etc/php/php.ini:ro
             - ./src:/var/www/src:ro
             - ./.env:/var/www/.env:ro
 
