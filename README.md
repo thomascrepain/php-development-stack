@@ -37,7 +37,7 @@ The app will be running at http://localhost
     ├── logs        # Logs of the app and all supporting services
     ├── docs        # Documentation files
     ├── public      # Public files (webroot)
-    ├── services    # Supporting services (e.g., Docker containers) and their configs
+    ├── etc         # Supporting services (e.g., Docker containers) and their configs
     ├── src         # Source files
     ├── tests       # Automated tests
     ├── .env        # Environment variables 
@@ -80,7 +80,7 @@ Installed:
 
 ### MariaDB (latest)
 
-The MariaDB server is for the host machine available at localhost:3306. This should be turned of in production or blocked by firewall.
+The MariaDB server is for the host machine available at localhost:3306. This should be turned off in production or blocked by firewall.
 
 When the container runs for the first time it will look in the `services/mariadb/initial-data` directory for any `.sh`, `.sql` and `.sql.gz` files. These files will be executed in alphabetical order.
 
@@ -96,7 +96,7 @@ An SMTP server is available for the application on port 1025. All emails send th
 
 ### Composer (latest)
 
-Composer is available as the command `docker-compose run composer`.
+Composer is available as `docker-compose run composer`.
 
 * [Composer](https://getcomposer.org/)
 * [Composer on Docker Hub](https://hub.docker.com/r/library/composer/)

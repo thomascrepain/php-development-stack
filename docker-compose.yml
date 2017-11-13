@@ -9,16 +9,16 @@ services:
         volumes:
             - ./logs/nginx:/var/log/nginx
             - ./public:/var/www/public:ro
-            - ./services/nginx/config/default.conf:/etc/nginx/conf.d/default.conf:ro
+            - ./etc/nginx/config/default.conf:/etc/nginx/conf.d/default.conf:ro
 
     php-fpm:
-        build: ./services/php-fpm
+        build: ./etc/php-fpm
         restart: always
         volumes:
             - ./logs/php-fpm:/var/log/php-fpm
             - ./public:/var/www/public:ro
-            - ./services/php-fpm/config/php-fpm.conf:/usr/local/etc/php-fpm.conf:ro
-            - ./services/php-fpm/config/php.ini:/usr/local/etc/php/php.ini:ro
+            - ./etc/php-fpm/config/php-fpm.conf:/usr/local/etc/php-fpm.conf:ro
+            - ./etc/php-fpm/config/php.ini:/usr/local/etc/php/php.ini:ro
             - ./src:/var/www/src:ro
             - ./.env:/var/www/.env:ro
 
@@ -37,8 +37,8 @@ services:
         volumes:
             - ./data/mariadb/mysql:/var/lib/mysql
             - ./logs/mariadb:/var/log/mysql
-            - ./services/mariadb/config:/etc/mysql/conf.d:ro
-            - ./services/mariadb/initial-data:/docker-entrypoint-initdb.d:ro
+            - ./etc/mariadb/config:/etc/mysql/conf.d:ro
+            - ./etc/mariadb/initial-data:/docker-entrypoint-initdb.d:ro
 
     composer:
         image: composer:latest
