@@ -93,3 +93,10 @@ An SMTP server is available for the application on port 1025. All emails send th
 
 * [Mailcatcher](https://mailcatcher.me/)
 * [Mailcatcher on Docker Hub](https://hub.docker.com/r/sj26/mailcatcher/)
+
+### Composer (latest)
+
+Composer is available as the command `docker-compose run composer`.
+
+* [Composer](https://getcomposer.org/)
+* [Composer on Docker Hub](https://hub.docker.com/r/library/composer/)

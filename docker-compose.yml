@@ -26,8 +26,7 @@ services:
         image: mariadb:latest
         restart: always
         container_name: ${MYSQL_HOST}
-        env_file:
-            - ".env"
+        env_file: .env
         environment:
             - MYSQL_DATABASE=${MYSQL_DATABASE}
             - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
@@ -40,6 +39,14 @@ services:
             - ./logs/mariadb:/var/log/mysql
             - ./services/mariadb/config:/etc/mysql/conf.d:ro
             - ./services/mariadb/initial-data:/docker-entrypoint-initdb.d:ro
+
+    composer:
+        image: composer:latest
+        user: "${LOCAL_UID:-1001}:${LOCAL_GID:-1001}"
+        env_file: .env
+        volumes:
+            - ./src:/var/www/src
+        working_dir: /var/www/src
 
     mailcatcher:
         image: sj26/mailcatcher:latest
